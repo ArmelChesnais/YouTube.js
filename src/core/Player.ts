@@ -221,7 +221,7 @@ export default class Player {
 
   static extractNSigSourceCode(data: string): string {
     // const match = data.match(/b=(?:a\.split\(|String\.prototype\.split\.call\(a,)\n?(?:""|\("",""\))\).*?\}return (?:b\.join\(|Array\.prototype\.join\.call\(b,)\n?(?:""|\("",""\))\)\}/s);
-    const match = data.match(new RegExp(`b=(?:a\\.split\\(|String\\.prototype\\.split\\.call\\(a,)\\n?(?:""|\\("",""\\))\\).*?\\}return (?:b\\.join\\(|Array\\.prototype\\.join\\.call\\(b,)\\n?(?:""|\\("",""\\)\\))\\}`, 's'));
+    const match = data.match(new RegExp(`b=(?:a\\.split\\(|String\\.prototype\\.split\\.call\\(a,)\\n?(?:""|\\("",""\\))\\).*?\\}return (?:b\\.join\\(|Array\\.prototype\\.join\\.call\\(b,)\\n?(?:""|\\("",""\\))\\)\\}`, 's'));
 
     if (!match) {
       throw new PlayerError('Failed to extract n-token decipher algorithm');
